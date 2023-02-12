@@ -41,12 +41,8 @@ module.exports = {
         link: "/guide/",
       },
       {
-        text: "Config",
-        link: "/config/",
-      },
-      {
-        text: "VuePress",
-        link: "https://v1.vuepress.vuejs.org",
+        text: "usergram-front-v2",
+        link: "https://github.com/bebit/usergram-front-v2",
       },
     ],
     sidebar: {
@@ -55,11 +51,6 @@ module.exports = {
           title: "Directories",
           collapsable: false,
           children: ["api", "models"],
-        },
-        {
-          title: "Unit Test",
-          collapsable: false,
-          children: ["", "using-vue"],
         },
       ],
     },
