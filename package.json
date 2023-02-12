@@ -1,0 +1,19 @@
+{
+  "name": "usergram-front-v2-contributing",
+  "version": "0.0.1",
+  "description": "Contributing guide for usergram-front-v2",
+  "main": "index.js",
+  "authors": {
+    "name": "Khuong Tran",
+    "email": "khuong.tran@bebit.com"
+  },
+  "repository": "usergram-front-v2-contributing/usergram-front-v2-contributing",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
