@@ -2,9 +2,7 @@
 
 This directory manages models. This usually works together with [src/api](#srcapi).
 
-## What we should do
-
-### Use `class` instead of `interface` for model
+## Use `class` instead of `interface`
 
 ```ts
 // src/models/LoginUser.ts
@@ -18,7 +16,7 @@ export class LoginUser {
 }
 ```
 
-#### Reason for using `class` instead of `interface`
+### Why
 
 It's not always easy to convert from `interface` to `class`. Let's say we have interface `LoginUser` and after a while, we need to add 3 getters for it.
 
@@ -62,7 +60,9 @@ const myUser = new LoginUser(...)
 
 This can be considered easy. But if we have a testing mock for this model like [this](https://github.com/bebit/usergram-front-v2/blob/8e50824a715667e7fc15ae8e97f3eb0f98f18e31/src/models/journey/UserJourneyPath.mock.ts), things can get complicated very quickly depending on how complicated the `interface` is. You may accidentally make the current tests fail, not to mention TypeScript complaining. It is doable, but it can generate unnecessary work. So if we make it a `class` from the first place, we can easily deal with it later.
 
-### Add more getters to the class to get some values that require some calculations
+## Use class' getters
+
+Use class' getters to get some values that require some calculations.
 
 ```ts
 // src/models/LoginUser.ts
@@ -84,13 +84,11 @@ export class LoginUser {
 }
 ```
 
-## What we should not do
-
-### Creating unnecessary helper functions
+## Not create unnecessary helper functions
 
 We should not create util functions, or `computed` in Vue file when it is possible to use getters.
 
-#### Example 1
+### Example 1
 
 ::: danger Bad
 
@@ -154,7 +152,7 @@ export class LoginUser {
 
 :::
 
-#### Example 2
+### Example 2
 
 ::: danger Bad
 
@@ -242,7 +240,7 @@ export class Device {
 
 :::
 
-### Dependencies injections from src/api
+## Not inject dependencies from src/api
 
 We should not inject dependencies from `src/api`, and models should not contain JSON parse methods (i.e. from API JSON to model). This should be done inside `src/api`.
 
