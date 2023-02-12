@@ -1,6 +1,6 @@
 # src/api
 
-This directory containing files that are responsible for making API calls, and return data as models. This directory and [src/models](#srcmodels) work together.
+This directory containing files that are responsible for making API calls, and return data as models. This directory and [src/models](models.html) work together.
 
 Let's say you want to create a new file to handle the API `/api/login` like this:
 
@@ -71,4 +71,4 @@ export default class ApiLogin {
 }
 ```
 
-:exclamation: **Converting from API response JSON to models should be done in this directory instead of inside [src/models](#srcmodels). See [this part](#dependencies-injections-from-srcapi).**
+:exclamation: **Converting from API response JSON to models should be done in this directory instead of inside [src/models](models.html). See [Don't inject dependencies from src/api](models.html#don-t-inject-dependencies-from-src-api).**

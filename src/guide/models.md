@@ -1,6 +1,6 @@
 # src/models
 
-This directory manages models. This usually works together with [src/api](#srcapi).
+This directory manages models. This usually works together with [src/api](api.html).
 
 ## Use `class` instead of `interface`
 
@@ -84,7 +84,7 @@ export class LoginUser {
 }
 ```
 
-## Not create unnecessary helper functions
+## Don't create unnecessary helper functions
 
 We should not create util functions, or `computed` in Vue file when it is possible to use getters.
 
@@ -240,9 +240,9 @@ export class Device {
 
 :::
 
-## Not inject dependencies from src/api
+## Don't inject dependencies from [src/api](api.html)
 
-We should not inject dependencies from `src/api`, and models should not contain JSON parse methods (i.e. from API JSON to model). This should be done inside `src/api`.
+We should not inject dependencies from [src/api](api.html), and models should not contain JSON parse methods (i.e. from API JSON to model). This should be done inside [src/api](api.html).
 
 ::: danger Bad
 
@@ -279,7 +279,7 @@ export class LoginUser {
 ```
 
 ```ts
-// src/api/auth.ts
+// [src/api](api.html)/auth.ts
 
 // If it's a simple model
 export default class ApiLogin {
