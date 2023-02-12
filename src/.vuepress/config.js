@@ -54,7 +54,7 @@ module.exports = {
         {
           title: "Directories",
           collapsable: false,
-          children: ["api"],
+          children: ["api", "models"],
         },
         {
           title: "Unit Test",
