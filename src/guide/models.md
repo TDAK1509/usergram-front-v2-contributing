@@ -92,7 +92,7 @@ We should not create util functions, or `computed` in Vue file when it is possib
 
 #### Example 1
 
-**Bad**
+::: danger Bad
 
 ```vue
 // Home.vue
@@ -120,7 +120,9 @@ export class LoginUser {
 }
 ```
 
-**Good**
+:::
+
+::: tip Good
 
 ```vue
 // Home.vue
@@ -150,9 +152,11 @@ export class LoginUser {
 }
 ```
 
+:::
+
 #### Example 2
 
-**Bad**
+::: danger Bad
 
 ```vue
 // Home.vue
@@ -197,7 +201,9 @@ export function getTranslationOfDevice(platformSubCategory: number): string {
 }
 ```
 
-**Good**
+:::
+
+::: tip Good
 
 ```vue
 // Home.vue
@@ -234,11 +240,13 @@ export class Device {
 }
 ```
 
+:::
+
 ### Dependencies injections from src/api
 
 We should not inject dependencies from `src/api`, and models should not contain JSON parse methods (i.e. from API JSON to model). This should be done inside `src/api`.
 
-**Bad**
+::: danger Bad
 
 ```ts
 // src/models/LoginUser.ts
@@ -256,7 +264,9 @@ export class LoginUser {
 }
 ```
 
-**Good**
+:::
+
+::: tip Good
 
 ```ts
 // src/models/LoginUser.ts
@@ -293,3 +303,5 @@ function toLoginUserModel(json): LoginUser {
   return new LoginUser(json.id, json.username, json.role);
 }
 ```
+
+:::
